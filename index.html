@@ -1,1 +1,169 @@
-hello
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Transistor Calculation Example</title>
+    <script src="package/echarts.common.js"></script>
+    <link rel="stylesheet" href="package/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/1.svg" type="image/x-icon" />
+
+</head>
+
+<body style="height: 100%;width: 100%; margin: 0">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="tab0-tab" data-toggle="tab" href="index.html">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab1-tab" data-toggle="tab"
+                href="Regular_TFT/Regular_TFT_simulator.html">Regular</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab1-tab" data-toggle="tab"
+                href="DrainOffset_TFT/DrainOffSet_TFT_simulator.html">Drain Offset</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="TFT_LED/TFT_LED_simulator.html">TFT-PD/LED</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab"
+                href="MidGate_TFT/MidGate_TFT_simulation.html">Mid-Gate</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab"
+                href="SIT/SIT_simulation.html">SIT</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab4-tab" data-toggle="tab" href="SplitGate_TFT/SplitGate_TFT.html">Split-Gate</a>
+        </li>
+    </ul>
+    <section class="jumbotron text-center" style="background-color: white;">
+        <div class="container">
+            <h1>Transistor Calculation Example </h1>
+            <h2>version 0.1.5</h2>
+            <p class="text-muted" style="font-size: 20px;font-weight: 360;">Transistor Calculation Example web is developed by Prof.
+                Chuan Liu's group, School of Electronics and Information Technology,
+                Sun Yat-Sen University, China.
+            </p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_regular.svg" style="padding: 5px;	width:100%; height:auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">Regular transistor</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="Regular_TFT/Regular_TFT_simulator.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_drainoffset.svg" style="padding: 5px;	width:100%; height:auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">Drain-offset transistor</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="DrainOffset_TFT/DrainOffSet_TFT_simulator.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_tftled.svg" style="padding: 5px; height: 100%; width: auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Transistor-PD/LED
+                            </h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="TFT_LED/TFT_LED_simulator.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_midgate.svg" style="padding: 5px;	width:100%; height:auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Mid-gate transistor
+                            </h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="MidGate_TFT/MidGate_TFT_simulation.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_sit.svg" style="padding: 5px;	width:100%; height:auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Static induction transistor
+                            </h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="SIT/SIT_simulation.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="bd-placeholder-img card-img-top" style="height:200px;" >
+                            <img src="img/img_splitgate.svg" style="padding: 5px; height: 100%; width: auto;">
+                            </img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Split-gate transistor
+                            </h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-sm btn-outline-primary" href="SplitGate_TFT/SplitGate_TFT.html">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-muted" style="font-size: 20px;font-weight: 360;">
+                Please contact liuchuan5@mail.sysu.edu.cn or luoyy29@mail2.sysu.edu.cn for any problem.
+            </p>
+            <!-- <p>
+                <a href="#" class="btn btn-primary my-2">How to use</a>
+                <a href="#" class="btn btn-secondary my-2">About us</a>
+            </p> -->
+        </div>
+    </section>
+
+</body>
+
+</html>

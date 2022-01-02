@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mid-Gate Simulator</title>
+    <script src="../package/echarts.common.js"></script>
+    <link rel="stylesheet" href="../package/bootstrap.min.css">
+    <link rel="stylesheet" href="../package/semichart.css">
+    <link rel="shortcut icon" href="../img/1.svg" type="image/x-icon" />
+</head>
+
+
+
+<body style="height: 100%;width: 100%; margin: 0">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab0-tab" data-toggle="tab" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab1-tab" data-toggle="tab"
+                href="../Regular_TFT/Regular_TFT_simulator.html">Regular</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab1-tab" data-toggle="tab"
+                href="../DrainOffset_TFT/DrainOffSet_TFT_simulator.html">Drain Offset</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="../TFT_LED/TFT_LED_simulator.html">TFT-PD/LED</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="tab3-tab" data-toggle="tab"
+                href="../MidGate_TFT/MidGate_TFT_simulation.html">Mid-Gate</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab"
+                href="../SIT/SIT_simulation.html">SIT</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab4-tab" data-toggle="tab"
+                href="../SplitGate_TFT/SplitGate_TFT.html">Split-Gate</a>
+        </li>
+    </ul>
+    <div style="display: flex; flex-direction: row;">
+        <div class="card" style="flex:7;">
+            <div class="card" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <div class="card-header">
+                    Non-gated channel
+                </div>
+                <div class="card-body">
+                    <div class="semiText">
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">W[μm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_W_nongated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">d<sub>1</sub>[μm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_d_nongated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">d<sub>3</sub>[μm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_d_nongated2">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">t<sub>sc</sub>[nm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_tsc_nongated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">ε<sub>sc</sub></span>
+                                </div>
+                                <input type="number" class="param" id="param_esc_nongated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">V<sub>d0</sub>[V]</span>
+                                </div>
+                                <input type="number" class="param" id="param_Vd0">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">μ<sub>1</sub>[cm2/Vs]</span>
+                                </div>
+                                <input type="number" class="param" id="param_mu_nongated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">μ<sub>3</sub>[cm2/Vs]</span>
+                                </div>
+                                <input type="number" class="param" id="param_mu_nongated2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <div class="card-header">
+                    Gated channel
+                </div>
+                <div class="card-body">
+                    <div class="semiText">
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">W[μm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_W_gated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">L[μm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_L_gated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">t<sub>ox</sub>[nm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_tox_gated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">μ<sub>2</sub>[cm2/Vs]</span>
+                                </div>
+                                <input type="number" class="param" id="param_mu_gated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">ε<sub>ox</sub></span>
+                                </div>
+                                <input type="number" class="param" id="param_eox_gated">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">V<sub>th</sub>[V]</span>
+                                </div>
+                                <input type="number" class="param" id="param_Vth">
+                            </div>
+                        </div>
+                        <div class="semiText-primary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R<sub>back</sub>[Ohm]</span>
+                                </div>
+                                <input type="number" class="param" id="param_Rback">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Charge transport & density factors
+                </div>
+                <div class="card-body">
+                    <div class="semiText">
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">α(>=1)</span>
+                                </div>
+                                <input type="number" class="param" id="param_alpha">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Q<sub>0</sub></span>
+                                </div>
+                                <input type="number" class="param" id="param_Q0">
+                            </div>
+                        </div>
+                        <div class="semiText-secondary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Q<sub>03</sub>/Q<sub>01</sub></span>
+                                </div>
+                                <input type="number" class="param" id="param_Q0_rate">
+                            </div>
+                        </div>
+                        <!-- <div class="semiText-primary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Q<sub>suggested</sub></span>
+                                </div>
+                                <input type="number" class="param_calculated" id="param_Q_suggested">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Scan settings
+                </div>
+                <div class="card-body">
+                    <div class="semiText">
+                        <div class="semiText-primary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">scan Vd or Vg</span>
+                                </div>
+                                <select class="custom-select" id="param_scanType" style="flex:0.5">
+                                    <option selected value="0">Vg</option>
+                                    <option value="1">Vd</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="semiText-primary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">fixed Vg or Vd[V]</span>
+                                </div>
+                                <input type="number" class="param" id="param_fixed">
+                            </div>
+                        </div>
+                        <div class="semiText-primary">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">scan range(V)</span>
+                                </div>
+                                <input type="number" class="param" id="param_scanRange">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card" style="flex: 2;">
+            <div style="flex-direction: column;">
+                <img src="midgate.svg" class="card-img-top semiImage">
+                <!-- <img src="sit.svg" class="card-img-top semiImage"> -->
+            </div>
+        </div>
+    </div>
+    <div class="semiText-primary">
+        <button type="button" class="btn btn-primary" id="inputData" onclick="inputdata()">Submit</button>
+        <button type="button" class="btn btn-secondary" id="init" onclick="initialization();inputdata()">Init</button>
+        <button type="button" class="btn btn-primary" id="ExportData" onclick="dataExport(data1);">ExportData</button>
+    </div>
+
+    <div class="semiChart" id="mainContainer">
+        <div class="semiChart-secondary" id="chart1"></div>
+        <div class="semiChart-secondary" id="chart2"></div>
+    </div>
+
+
+    </div>
+
+    <script src="../package/xlsx.full.min.js"></script>
+    <script src="io.js"></script>
+    <script src="sheet.js"></script>
+    <script>
+        initialization();
+        inputdata();
+    </script>
+
+
+
+
+</body>
+
+</html>
